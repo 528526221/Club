@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TagFlowLayout">
+        <attr name="ItemHorSpace" format="dimension"/>
+        <attr name="ItemVerSpace" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="FixTabIndicator">
+        <attr name="tabIndicatorColor" format="color"/>
+        <attr name="tabIndicatorPosition" format="integer"/>
+        <attr name="tabIndicatorHeight" format="dimension"/>
+    </declare-styleable>
+</resources>

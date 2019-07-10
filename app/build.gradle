@@ -1,0 +1,87 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    signingConfigs {
+        release {
+            keyAlias 'club_release'
+            keyPassword '123456'
+            storeFile file('./keystore/club_release.jks')
+            storePassword '123456'
+        }
+        debug {
+            keyAlias 'club_debug'
+            keyPassword '123456'
+            storeFile file('./keystore/club_debug.jks')
+            storePassword '123456'
+        }
+    }
+    defaultConfig {
+        applicationId "com.xohealth.club"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.2.0
+//    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    // (必选)
+    // Dagger dependencies
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+    compile "com.google.dagger:dagger:$rootProject.daggerVersion"
+    compile "com.google.dagger:dagger-android:$rootProject.daggerVersion"
+    compile "com.google.dagger:dagger-android-support:$rootProject.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
+    compile 'com.github.tbruyelle:rxpermissions:0.10.2', {
+        exclude group: 'com.android.support'
+        exclude group: 'io.reactivex.rxjava2'
+    }
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile 'com.tencent.bugly:crashreport:latest.release'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.1'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    compile 'com.blankj:utilcode:1.9.6'
+    compile 'de.hdodenhof:circleimageview:2.2.0'
+    compile 'com.just.agentweb:agentweb:4.0.2'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    compile 'com.github.anzaizai:EasyRefreshLayout:1.3.1'
+    compile 'com.contrarywind:Android-PickerView:4.1.6'
+    compile 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+    compile 'com.qiniu:qiniu-android-sdk:7.3.+'
+    compile 'com.android.support.constraint:constraint-layout:1.1.0'
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+    compile 'junit:junit:4.12'
+}
+repositories {
+    mavenCentral()
+}

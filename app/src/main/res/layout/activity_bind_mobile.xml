@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_40d3fa"
+    tools:context="com.xohealth.club.ui.completinginfo.CompletingInfoActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_61_dp"
+                android:text="绑定手机号"
+                android:textColor="@color/color_fff"
+                android:textSize="@dimen/dimen_20_sp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivHeader"
+                android:layout_width="@dimen/dimen_93_dp"
+                android:layout_height="@dimen/dimen_93_dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_11_sp"
+                android:text="输入手机号码"
+                android:textColor="@color/color_fff"
+                android:layout_marginLeft="@dimen/dimen_30_dp"
+                android:layout_marginTop="@dimen/dimen_24_dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_28_dp"
+                android:layout_marginLeft="@dimen/dimen_30_dp"
+                android:layout_marginRight="@dimen/dimen_30_dp"
+                android:background="@drawable/input_shape"
+                android:layout_marginTop="@dimen/dimen_10_dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_b3b3b3"
+                    android:textSize="@dimen/dimen_13_sp"
+                    android:layout_marginLeft="@dimen/dimen_14_dp"
+                    android:text="+86"/>
+                <EditText
+                    android:id="@+id/etPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/dimen_14_dp"
+                    android:paddingRight="@dimen/dimen_14_dp"
+                    android:textColor="@color/color_b3b3b3"
+                    android:textSize="@dimen/dimen_13_sp"
+                    android:inputType="phone"
+                    android:background="@null"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_11_sp"
+                android:text="输入验证码"
+                android:textColor="@color/color_fff"
+                android:layout_marginLeft="@dimen/dimen_30_dp"
+                android:layout_marginTop="@dimen/dimen_25_dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_28_dp"
+                android:layout_marginLeft="@dimen/dimen_30_dp"
+                android:layout_marginRight="@dimen/dimen_30_dp"
+                android:background="@drawable/input_shape"
+                android:layout_marginTop="@dimen/dimen_10_dp"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/etCode"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/dimen_14_dp"
+                    android:paddingRight="@dimen/dimen_14_dp"
+                    android:textColor="@color/color_b3b3b3"
+                    android:textSize="@dimen/dimen_13_sp"
+                    android:inputType="number"
+                    android:background="@null"/>
+                <TextView
+                    android:id="@+id/tvGetCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="获取验证码"
+                    android:textSize="@dimen/dimen_11_sp"
+                    android:paddingRight="@dimen/dimen_17_dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/color_666666"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_9_sp"
+                android:layout_marginLeft="@dimen/dimen_30_dp"
+                android:textColor="@color/color_fff"
+                android:layout_marginTop="@dimen/dimen_9_dp"
+                android:text="根据国家法律规定，所有用户必须绑定手机号码。"/>
+            <ImageView
+                android:id="@+id/ivNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/next_step"
+                android:layout_marginTop="@dimen/dimen_46_dp"
+                android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_4_dp"
+        android:layout_marginTop="@dimen/dimen_13_dp"
+        android:padding="@dimen/dimen_16_dp"
+        android:onClick="finishBack"
+        android:src="@mipmap/back" />
+</RelativeLayout>
