@@ -1,12 +1,13 @@
 package com.xohealth.club.net;
 
+import android.support.annotation.Nullable;
+
 import com.xohealth.club.base.BaseResponse;
 import com.xohealth.club.bean.RefreshTokenData;
 import com.xohealth.club.utils.UserUtil;
 
 import java.io.IOException;
 
-import javax.annotation.Nullable;
 
 import okhttp3.Authenticator;
 import okhttp3.Request;
